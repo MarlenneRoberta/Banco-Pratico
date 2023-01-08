@@ -1,6 +1,6 @@
-from django.apps import AppConfig
+from django.apps import BancoAppConfig
 
 
-class BancoappConfig(AppConfig):
+class BancoappConfig(BancoAppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'BancoApp'
