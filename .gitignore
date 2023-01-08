@@ -11,5 +11,5 @@ venv.bak/
 # Byte-compiled / optimized / DLL files
 _pycache_/
 
-.hintrc/
+.hintrc
 
