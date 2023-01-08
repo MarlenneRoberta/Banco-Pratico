@@ -19,7 +19,7 @@ class Transações(models.Model):
 class Conta(models.Model):
     def __init__(self, valor_total_conta, ultima_atualizacao, numero_conta):
         self.valor_total_conta = self.saldo_atual
-        self.ultima_atualizacao = (self.saldo_atual - self.transferencia_possivel)
+        self.ultima_atualizacao = (self.saldo_atual - self.valor_possivel)
         self.numero_da_conta = self.conta_destino
 
     def realizar_transferencia (self, horario_transferencia_realizada, valor_taxa, valor_transferencia_realizada, taxa_extra):
@@ -46,7 +46,7 @@ class Saque(models.Model):
     def __init__(self, valor_total_conta, ultima_atualizacao, realizar_saque):
         self.valor_total_conta = saldo_atual
         self.ultima_atualizacao = (saldo_atual - valor_transferencia) + valor_deposito - valor_saque
-          
+        self.horario_saque =  
         if valor_total_conta = 0.00 & valor_total_conta < valor_saque:
             return ('Saldo insuficiente', self.valor_total_conta)
         else:
@@ -57,9 +57,9 @@ class Saque(models.Model):
 class Saldo(models.Model):
     def __init__(self, valor_total_conta, ultima_atualizacao, realizar_saque):
         self.valor_total_conta >= 0.00
-        valor_total_conta == saldo_atual - realizar_saque &
-        valor_total_conta == saldo_atual + valor_deposito &
-        valor_total_conta == saldo_atual - realizar_transferencia
+        valor_total_conta == self.saldo_atual - realizar_saque &
+        valor_total_conta == self.saldo_atual + valor_deposito &
+        valor_total_conta == self.saldo_atual - realizar_transferencia
     return (self.valor_total_conta)
 
 class Extrato(models.Model):
@@ -73,7 +73,7 @@ class Extrato(models.Model):
     valor_saque
     saldo_atual
     
-    def solicitacao_extrato (self, ):
+    def solicitacao_extrato(self, ):
 
         self.horario_transferencia_realizada = datetime.now()
         self.horario_transferencia_recebida = datetime.now()
